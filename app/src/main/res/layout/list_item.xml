@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item"
+    android:layout_width="115dp"
+    android:layout_height="135dp"
+    android:fontFamily="@font/montserrat"
+    android:gravity="center"
+    android:rotation="-90"
+    android:text="@string/procedures"
+    android:textSize="20sp"
+    />
