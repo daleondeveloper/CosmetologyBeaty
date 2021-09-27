@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -51,5 +53,10 @@ public class PriceList extends AppCompatActivity {
                         listView.setAdapter(priceTableAdapter);
                     }
                 });
+    }
+
+    public void OnClickMakeAppointment(View view) {
+        Intent intent = new Intent(this,MakeAppointmentActivity.class);
+        startActivity(intent);
     }
 }

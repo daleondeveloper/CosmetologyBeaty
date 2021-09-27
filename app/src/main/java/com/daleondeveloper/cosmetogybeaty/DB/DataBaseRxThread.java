@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daleondeveloper.cosmetogybeaty.DB.Entity.Procedure;
+import com.daleondeveloper.cosmetogybeaty.MakeAppointmentActivity;
 import com.daleondeveloper.cosmetogybeaty.R;
 import com.daleondeveloper.cosmetogybeaty.adapter.ProcedureAdapter;
 
@@ -70,7 +74,32 @@ public class DataBaseRxThread {
                         courseRecycle.setAdapter(procedureAdapter);
                     }
                 });
-
-
+    }
+    public void setSpinnerMakeAppointment(final Activity activity, final int spinnerId){
+        dataBase.procedureDao().getAll()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<Procedure>>() {
+                    @Override
+                    public void accept(List<Procedure> procedures) throws Exception {
+                        Spinner spinner = (Spinner)activity.findViewById(spinnerId);
+                        List<String> s = new ArrayList<>();
+                        for(Procedure procedure : procedures){
+                            s.add(procedure.getName());
+                        }
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,  android.R.layout.simple_spinner_item, s);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        spinner.setAdapter(adapter);
+                    }
+                });
+    }
+    public void setMakeAppointmentCostAndDuration(final MakeAppointmentActivity activity, final String procedureName){
+        dataBase.procedureDao().getProcedureByName(procedureName)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Procedure>() {
+                    @Override
+                    public void accept(Procedure procedure) throws Exception {
+                        activity.setOnTextView(procedure.getCost(),procedure.getDuration());
+                    }
+                });
     }
 }

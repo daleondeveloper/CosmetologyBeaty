@@ -22,8 +22,12 @@ public interface ProcedureDao {
     @Query("SELECT * FROM Procedure")
     public Flowable<List<Procedure>> getAll();
 
+    @Query("SELECT * FROM Procedure WHERE name = :name")
+    public Flowable<Procedure> getProcedureByName(String name);
+
     @Query("SELECT * FROM Procedure WHERE isAvailable = :isAvailable")
     public Cursor getAllAvailable(boolean isAvailable);
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public Completable insertAll(List<Procedure> procedure);

@@ -64,7 +64,8 @@
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/make_appointment" />
+            android:text="@string/make_appointment"
+            android:onClick = "OnClickMakeAppointment"/>
     </LinearLayout>
 
 </LinearLayout>

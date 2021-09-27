@@ -109,11 +109,12 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/cardButtonMakeAppointment"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/make_appointment" />
+                android:text="@string/make_appointment"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
