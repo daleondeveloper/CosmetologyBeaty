@@ -107,6 +107,13 @@
                     android:textColor="@color/cardview_light_background"
                     android:textSize="16sp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/make_appointment" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

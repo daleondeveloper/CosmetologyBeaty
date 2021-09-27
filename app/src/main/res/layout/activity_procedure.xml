@@ -13,8 +13,24 @@
 
     </androidx.fragment.app.FragmentContainerView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id = "@+id/all_procedure_recycle_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="Процедури"
+            android:textSize="30sp"
+            app:fontFamily="@font/montserrat_bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/all_procedure_recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </LinearLayout>

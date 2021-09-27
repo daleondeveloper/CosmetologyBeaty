@@ -29,7 +29,7 @@ public class PriceTableAdapter extends RecyclerView.Adapter<PriceTableAdapter.Pr
     @NonNull
     @Override
     public ProcedureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View courseItem = LayoutInflater.from(context).inflate(R.layout.cost_table_line,parent,false);
+        View courseItem = LayoutInflater.from(context).inflate(R.layout.element_cost_table_line,parent,false);
         return  new ProcedureViewHolder(courseItem);
     }
 

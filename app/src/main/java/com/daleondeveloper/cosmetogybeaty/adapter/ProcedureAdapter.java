@@ -31,7 +31,7 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
     @NonNull
     @Override
     public ProcedureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View courseItem = LayoutInflater.from(context).inflate(R.layout.course_item,parent,false);
+        View courseItem = LayoutInflater.from(context).inflate(R.layout.element_card_view_procedures,parent,false);
         return  new ProcedureViewHolder(courseItem);
     }
 

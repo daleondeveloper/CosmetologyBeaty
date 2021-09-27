@@ -41,7 +41,7 @@ public class MainMenuFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main_menu,container,false);
         ListView listView = view.findViewById(R.id.main_menu_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(activityContext,
-                R.layout.list_item,menuNames);
+                R.layout.element_list_view_main_menu,menuNames);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
