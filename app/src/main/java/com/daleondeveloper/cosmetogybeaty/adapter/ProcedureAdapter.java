@@ -2,7 +2,6 @@ package com.daleondeveloper.cosmetogybeaty.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daleondeveloper.cosmetogybeaty.DB.Entity.Procedure;
 import com.daleondeveloper.cosmetogybeaty.MakeAppointmentActivity;
+import com.daleondeveloper.cosmetogybeaty.ProcedureInfoActivity;
 import com.daleondeveloper.cosmetogybeaty.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.ProcedureViewHolder> {
@@ -49,10 +48,18 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
         holder.infoTxt.setText(procedures.get(position).getDescription());
         holder.durationTxt.setText(procedures.get(position).getDuration() + " хвилин");
         holder.costTxt.setText(procedures.get(position).getCost() + " грн");
-        holder.button.setOnClickListener(new View.OnClickListener() {
+        holder.buttonMakeAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, MakeAppointmentActivity.class);
+                intent.putExtra(INTENT_PROCEDURE,procedures.get(position).getName());
+                context.startActivity(intent);
+            }
+        });
+        holder.buttonAboutProcedure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProcedureInfoActivity.class);
                 intent.putExtra(INTENT_PROCEDURE,procedures.get(position).getName());
                 context.startActivity(intent);
             }
@@ -76,7 +83,8 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
         LinearLayout courseBg;
         ImageView image;
         TextView titleTxt,infoTxt,durationTxt,costTxt;
-        Button button;
+        Button buttonMakeAppointment;
+        Button buttonAboutProcedure;
 
 
         public ProcedureViewHolder(@NonNull View itemView) {
@@ -88,8 +96,8 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
             infoTxt = itemView.findViewById(R.id.cardInfo);
             durationTxt = itemView.findViewById(R.id.cardDuration);
             costTxt = itemView.findViewById(R.id.cardCost);
-            button = itemView.findViewById(R.id.cardButtonMakeAppointment);
-
+            buttonMakeAppointment = itemView.findViewById(R.id.cardButtonMakeAppointment);
+            buttonAboutProcedure = itemView.findViewById(R.id.cardButtonAboutProcedure);
         }
     }
 }

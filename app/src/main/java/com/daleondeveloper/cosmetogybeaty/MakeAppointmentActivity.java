@@ -55,8 +55,8 @@ public class MakeAppointmentActivity extends AppCompatActivity {
     public void setOnTextView(int cost, int duration){
         TextView costTextView = (TextView)findViewById(R.id.cost_make_appointment);
         TextView durationTextView = (TextView)findViewById(R.id.duration_make_appointment);
-        costTextView.setText("вартість" + cost);
-        durationTextView.setText("тривалість" +duration);
+        costTextView.setText("вартість : " + cost + " грн");
+        durationTextView.setText("тривалість : " +duration + " хв");
     }
 
 }

@@ -38,7 +38,7 @@
             android:id="@+id/duration_make_appointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="тривалість :  60 хв"
+            android:text="тривалість :"
             android:textSize = "20sp"
             android:layout_margin = "15dp"/>
 
@@ -46,7 +46,7 @@
             android:id="@+id/cost_make_appointment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="вартість : 1000 грн"
+            android:text="вартість :"
             android:textSize = "20sp"
             android:layout_margin = "15dp"/>
 
