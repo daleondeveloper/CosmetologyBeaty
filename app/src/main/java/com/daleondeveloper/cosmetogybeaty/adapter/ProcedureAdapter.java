@@ -1,7 +1,9 @@
 package com.daleondeveloper.cosmetogybeaty.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,9 +45,11 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
     public void onBindViewHolder(@NonNull final ProcedureViewHolder holder, final int position) {
 
       //  holder.courseBg.setBackgroundColor(Color.parseColor(procedures.get(position).getColor()));
-        holder.image.setImageResource((int)procedures.get(position).getImage());
+        Resources res = context.getResources();
+        int id = res.getIdentifier(procedures.get(position).getImage(), "drawable", context.getPackageName());
+        holder.image.setImageResource(id);
         holder.titleTxt.setText(procedures.get(position).getName());
-        holder.infoTxt.setText(procedures.get(position).getDescription());
+        holder.infoTxt.setText(procedures.get(position).getShortDescription());
         holder.durationTxt.setText(procedures.get(position).getDuration() + " хвилин");
         holder.costTxt.setText(procedures.get(position).getCost() + " грн");
         holder.buttonMakeAppointment.setOnClickListener(new View.OnClickListener() {

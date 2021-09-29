@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/info_procedure_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -29,7 +29,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/info_procedure_img"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="10dp"
@@ -44,7 +44,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/info_procedure_duration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -52,7 +52,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/info_procedure_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -81,6 +81,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:background="@null"
                         android:scaleType="fitCenter"
+                        android:onClick="sendMessageViber"
                         android:src="@drawable/icon_viber" />
 
                     <ImageButton
@@ -90,7 +91,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:background="@null"
                         android:scaleType="fitCenter"
-
+                        android:onClick="sendMessageTelegram"
                         android:src="@drawable/icon_telegram" />
 
                     <ImageButton
@@ -100,7 +101,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:background="@null"
                         android:scaleType="fitCenter"
-
+                        android:onClick="sendMessageInstagram"
                         android:src="@drawable/icon_instagram" />
                 </LinearLayout>
 
@@ -109,7 +110,7 @@
         </LinearLayout>
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/videoView"
+            android:id="@+id/info_procedure_youtube_video_view"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_margin="20dp">
@@ -117,7 +118,7 @@
         </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/info_procedure_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

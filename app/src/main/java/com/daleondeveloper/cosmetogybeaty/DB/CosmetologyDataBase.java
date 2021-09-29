@@ -13,7 +13,7 @@ import com.daleondeveloper.cosmetogybeaty.R;
 @Database(entities = {Procedure.class}, version = CosmetologyDataBase.VERSION)
 public abstract class CosmetologyDataBase extends RoomDatabase {
 
-    static final int VERSION = 3;
+    static final int VERSION = 5;
     private static volatile CosmetologyDataBase instance;
 
     public abstract ProcedureDao procedureDao();
@@ -24,7 +24,7 @@ public abstract class CosmetologyDataBase extends RoomDatabase {
             synchronized (CosmetologyDataBase.class){
                 if(instance == null){
                     instance = Room.databaseBuilder(context.getApplicationContext(),
-                            CosmetologyDataBase.class, "CosmetologyDatabase").build();
+                            CosmetologyDataBase.class, "CosmetologyDatabase").fallbackToDestructiveMigration().build();
                 }
             }
         }
