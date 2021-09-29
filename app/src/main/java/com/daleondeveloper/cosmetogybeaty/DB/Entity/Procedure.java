@@ -11,17 +11,21 @@ public class Procedure {
     private long id;
 
     private String name;
+    private String shortDescription;
     private String description;
+    private String youtubeId;
+    private String image;
 
-    private long image;
     private int cost;
     private int duration;
 
     private boolean isAvailable;
 
-    public Procedure(String name, String description, long image, int cost, int duration, boolean isAvailable) {
+    public Procedure(String name, String shortDescription, String description, String youtubeId, String image, int cost, int duration, boolean isAvailable) {
         this.name = name;
+        this.shortDescription = shortDescription;
         this.description = description;
+        this.youtubeId = youtubeId;
         this.image = image;
         this.cost = cost;
         this.duration = duration;
@@ -52,11 +56,11 @@ public class Procedure {
         this.description = description;
     }
 
-    public long getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(long image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -82,5 +86,21 @@ public class Procedure {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    public String getYoutubeId() {
+        return youtubeId;
+    }
+
+    public void setYoutubeId(String youtubeId) {
+        this.youtubeId = youtubeId;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 }
