@@ -3,12 +3,15 @@ package com.daleondeveloper.cosmetogybeaty;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daleondeveloper.cosmetogybeaty.DB.CosmetologyDataBase;
 import com.daleondeveloper.cosmetogybeaty.DB.DataBaseRxThread;
@@ -19,6 +22,7 @@ import org.w3c.dom.Text;
 public class MakeAppointmentActivity extends AppCompatActivity {
 
     private DataBaseRxThread dataBaseRxThread;
+    private String sendMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,8 @@ public class MakeAppointmentActivity extends AppCompatActivity {
 
     private void setCostAndDuration(String name){
         dataBaseRxThread.setMakeAppointmentCostAndDuration((MakeAppointmentActivity)this,name);
+        sendMessage = "Доброго дня, хочу записатися на " + name;
+
 
     }
     public void setOnTextView(int cost, int duration){
@@ -58,5 +64,39 @@ public class MakeAppointmentActivity extends AppCompatActivity {
         costTextView.setText("вартість : " + cost + " грн");
         durationTextView.setText("тривалість : " +duration + " хв");
     }
+
+    public void sendMessageViber(View view){
+        Toast.makeText(this, "Viber button pressed", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("viber://chat?number=380978006658"));
+//        intent.setPackage("com.viber.voip");
+//        intent.setType("text/plain");
+        startActivity(intent);
+    }
+public void sendMessageTelegram(View view){
+        Toast.makeText(this, "Viber button pressed", Toast.LENGTH_SHORT).show();
+
+    Intent i = new Intent(Intent.ACTION_VIEW);
+    i.setData(Uri.parse("http://telegram.me/difficult_username"));
+    final String appName = "org.telegram.messenger";
+    i.setPackage(appName);
+    this.startActivity(i);
+    }
+    public void sendMessageInstagram(View view){
+        Toast.makeText(this, "Viber button pressed", Toast.LENGTH_SHORT).show();
+
+        Uri uri = Uri.parse("http://instagram.com/_u/place_of_beauty_cosmetology");
+        Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
+
+        likeIng.setPackage("com.instagram.android");
+
+        try {
+            startActivity(likeIng);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://instagram.com/xxx")));
+        }
+    }
+
 
 }

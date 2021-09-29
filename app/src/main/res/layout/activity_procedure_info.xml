@@ -1,80 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation = "vertical"
+    android:layout_margin = "10dp"
     tools:context=".ProcedureInfoActivity">
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Біоревіталізація"
-        android:textSize = "30sp"
-        android:layout_margin="20dp"
-        android:gravity = "center"
-        app:fontFamily="@font/montserrat_bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:layout_margin = "10dp"
-            android:src="@drawable/biorevitalizatiya" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="Біоревіталізація"
+            android:textSize="30sp"
+            app:fontFamily="@font/montserrat_bold" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="тривалість : 60 хв" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="вартість : 1000 грн" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Записатися на прийом :"
-                android:layout_gravity = "center"/>
-
-            <Button
-                android:id="@+id/button3"
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/biorevitalizatiya" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Запис на прийом"
-                android:layout_gravity = "center"/>
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="тривалість : 60 хв"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="вартість : 1000 грн"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Записатися на прийом :"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_viber" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+
+                        android:src="@drawable/icon_telegram" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+
+                        android:src="@drawable/icon_instagram" />
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="20dp">
+
+        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/infoString" />
 
     </LinearLayout>
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:id="@+id/videoView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_margin = "20dp"/>
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Как работает биоревитализация Основной причиной старения кожи является недостаток гиалуроновой кислоты, которая перестает вырабатываться у людей старше 25 лет. В результате обмен веществ в коже идет хуже, и она становится уязвимой к негативным внешним воздействиям, утрачивает защитные свойства и становится менее эластичной. Вследствие этого и появляются морщины, сухость и дряблость. Крема, содержащие гиалуроновую кислоту воздействуют только на верхний слой кожи. Это связано с тем, что данное вещество обладает большой молекулярной массой и неспособно преодолеть эпидермальный барьер, чтобы проникнуть достаточно глубоко. Биоревитализация решает эту проблему за счет того, что гиалуроновая кислота вводится путем инъекций, а ее воздействующий на клетки объем, на порядок выше. В результате почти мгновенно кожа становится более упругой и увлажненной, постепенно восстанавливаются и ее защитные свойства.  Кому назначается биоревитализация Подкожные инъекции гиалуроновой кислоты являются превосходным средством против преждевременного старения кожи, которое обусловлено как возрастом, так и другими факторами – избыточной инсоляцией, стрессами, курением и т.п. Прежде всего, биоревитализация лица восстанавливает водный баланс кожи, а также стимулирует ее физиологическую регенерацию. Кроме того, процедура способствует детоксикации дермы и укреплению волосяных луковиц, причем производит не сиюминутный, а долгосрочный эффект. Таким образом, она может назначаться практически всем, кто серьезно следит за здоровьем своей кожи и желает продлить ее молодость. Можно выделить целый ряд важных эффектов, производимых биоревитализацией:  - коррекция мелких морщин; - устранение признаков старения, вызванных воздействием ультрафиолета; - выравнивание рельефа кожи; - ликвидация возрастных изменений; - восстановление эластичности, тонуса и здорового цвета кожи; - увлажнение кожи и создание гидрорезерва.  Как проводится биоревитализация кожи Курс лечения, как правило, состоит из четырех процедур, эффект от которых стойко держится от полугода до 9 месяцев. При отсутствии противопоказаний, пациента направляют в специальный кабинет, где осуществляется демакияж и по желанию клиента проводится местная анестезия. В строго обозначенные точки врач делает инъекции безопасными сертифицированными препаратами (наиболее часто используются IAL-system ACP, Restylane Vital, IAL-sysem и Otihyal). Все это занимает не более 50 минут. Подобные манипуляции повторяются через 2-3 недели определенное количество раз, исходя из курса лечения." />
-</LinearLayout>
+</ScrollView>
