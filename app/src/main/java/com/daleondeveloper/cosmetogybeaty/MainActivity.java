@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dataBaseRxThread = new DataBaseRxThread(CosmetologyDataBase.getInstance(this));
-        dataBaseRxThread.insertStartElements();
-        dataBaseRxThread.setCardViewProcedures(this,R.id.courseRecycle);
+//        dataBaseRxThread = new DataBaseRxThread(CosmetologyDataBase.getInstance(this));
+//        dataBaseRxThread.insertStartElements();
+//        dataBaseRxThread.setCardViewProcedures(this,R.id.courseRecycle);
 
     }
 }

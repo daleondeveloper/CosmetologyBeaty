@@ -75,7 +75,7 @@ public class ProcedureInfoActivity extends YouTubeBaseActivity {
     public void sendMessageViber(View view){
         Toast.makeText(this, "Viber button pressed", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("viber://chat?number=380978006658"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("viber://chat?number=380688661006"));
 //        intent.setPackage("com.viber.voip");
 //        intent.setType("text/plain");
         startActivity(intent);
@@ -84,7 +84,7 @@ public class ProcedureInfoActivity extends YouTubeBaseActivity {
         Toast.makeText(this, "Viber button pressed", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("http://telegram.me/difficult_username"));
+        i.setData(Uri.parse("http://telegram.me/daleon96"));
         final String appName = "org.telegram.messenger";
         i.setPackage(appName);
         this.startActivity(i);

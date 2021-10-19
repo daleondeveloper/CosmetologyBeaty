@@ -127,7 +127,7 @@ public class DataBaseRxThread {
                 .subscribe(new Consumer<List<Procedure>>() {
                     @Override
                     public void accept(List<Procedure> procedures) throws Exception {
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(activity,RecyclerView.HORIZONTAL,false);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(activity,RecyclerView.VERTICAL,false);
                         RecyclerView courseRecycle ;
                         ProcedureAdapter procedureAdapter;
                         courseRecycle   = activity.findViewById(recycleView);

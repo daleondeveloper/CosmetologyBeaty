@@ -3,6 +3,6 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="mainBgColor">#F6F6F6</color>
-    <color name="secondBgColor">#EAEAEA</color>
+    <color name="mainBgColor">#FFCBD7</color>
+    <color name="secondBgColor">#FE00FE</color>
 </resources>

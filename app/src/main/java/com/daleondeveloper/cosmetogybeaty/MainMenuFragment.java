@@ -21,7 +21,6 @@ import android.widget.Toast;
 public class MainMenuFragment extends Fragment {
     final String[] menuNames = new  String[]{
             "Головна",
-            "Кабінет",
             "Прайс лист",
             "Процедури",
             "Контакти"
@@ -54,22 +53,22 @@ public class MainMenuFragment extends Fragment {
                         activityContext.startActivity(intent);
                     }
                     break;
-                    case 1 : {
-                        Intent intent = new Intent(activityContext,UserActitvity.class);
-                        activityContext.startActivity(intent);
-                    }
-                    break;
-                    case 2 :{
+//                    case 1 : {
+//                        Intent intent = new Intent(activityContext,UserActitvity.class);
+//                        activityContext.startActivity(intent);
+//                    }
+//                    break;
+                    case 1 :{
                         Intent intent = new Intent(activityContext,PriceList.class);
                         activityContext.startActivity(intent);
                     }
                     break;
-                    case 3 : {
+                    case 2 : {
                         Intent intent = new Intent(activityContext,ProcedureActivity.class);
                         activityContext.startActivity(intent);
                     }
                     break;
-                    case 4 : {
+                    case 3 : {
                         Intent intent = new Intent(activityContext,ContactActivity.class);
                         activityContext.startActivity(intent);
                     }

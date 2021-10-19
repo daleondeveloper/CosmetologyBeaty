@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daleondeveloper.cosmetogybeaty.DB.Entity.Procedure;
@@ -68,7 +70,33 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
                 context.startActivity(intent);
             }
         });
+        ViewGroup.LayoutParams moreInfoLP = holder.moreInfo.getLayoutParams();
+        moreInfoLP.height = 0;
+        ViewGroup.LayoutParams imageLP = holder.image.getLayoutParams();
+        imageLP.height = 0;
+        holder.procedureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float factor = holder.itemView.getContext().getResources().getDisplayMetrics().density;
+                ViewGroup.LayoutParams moreInfoLP = holder.moreInfo.getLayoutParams();
+                ViewGroup.LayoutParams imageLP = holder.image.getLayoutParams();
+                Toast.makeText(context,"Card view pressed", Toast.LENGTH_LONG);
+                if(moreInfoLP.height == 0){
+                    moreInfoLP.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    imageLP.height = (int)(208 * factor);
+                    holder.moreInfo.setLayoutParams(moreInfoLP);
+                }else {
+                    moreInfoLP.height = 0;
+                    imageLP.height = 0;
+                    holder.moreInfo.setLayoutParams(moreInfoLP);
+
+                }
+            }
+
+        });
+
     }
+
     private String getColor(){
         String[] colors = {
                 "","",""
@@ -85,16 +113,21 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
     public static final class ProcedureViewHolder extends  RecyclerView.ViewHolder{
 
         LinearLayout courseBg;
+        LinearLayout moreInfo;
+        CardView procedureCard;
         ImageView image;
         TextView titleTxt,infoTxt,durationTxt,costTxt;
         Button buttonMakeAppointment;
         Button buttonAboutProcedure;
 
 
+
         public ProcedureViewHolder(@NonNull View itemView) {
             super(itemView);
 
             courseBg = itemView.findViewById(R.id.CardLayout);
+            moreInfo = itemView.findViewById(R.id.layoutMoreInfo);
+            procedureCard = itemView.findViewById(R.id.procedureCard);
             image = itemView.findViewById(R.id.CardAvatar);
             titleTxt = itemView.findViewById(R.id.cardTitle);
             infoTxt = itemView.findViewById(R.id.cardInfo);
